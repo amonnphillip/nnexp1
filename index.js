@@ -229,7 +229,7 @@ var network = function() {
         if (trainingIteration % displayInterval == 0) {
           console.log('iteration: ' + trainingIteration);
           this.displayToConsole();
-          this.evaluateError(this.getTrainingValues(0));
+          this.evaluateError(trainingValues);
         }
 
         trainingIteration ++;
@@ -247,6 +247,7 @@ var network = function() {
       }
 
       console.log(errorOut);
+      console.log('');
     },
     testAgainstTrainingData: function() {
       console.log('');
@@ -283,7 +284,6 @@ var network = function() {
         console.log(out);
 
         this.evaluateError(trainingValues);
-        console.log('');
       }
     },
     forward: function() {
